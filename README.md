@@ -7,7 +7,7 @@ This is my JavaScript practice repo where I build one mini project every day.
 ## Projects
 
 ### 1. OTP Generator
-A simple OTP generator that creates a random 6-digit code on button click.
+A simple OTP generator that creates a random 4-digit code on button click.
 - **Concepts:** DOM manipulation, Math.random(), event listeners
 - **File:** `otp-generator.html`
 
