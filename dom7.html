@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            height: 30px;
+            background-color: azure;
+            color: black;
+        }
+        #otp {
+            font-family:monospace;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="otp">Click to Generate OTP</h2>
+    <button id="btn">Generate OTP</button>
+    <button id="copyBtn">Copy otp</button>
+    <script src="/javascript/dom7.js"></script>
+    <script>
+        let h2 = document.querySelector("#otp");
+let button = document.querySelector("#btn");
+let copyBtn = document.querySelector("#copyBtn");
+let currentOTP = "";
+
+button.addEventListener("click", () => {
+    let otp = "";
+    for(let i = 0; i<4; i++){
+        let digit = Math.floor(Math.random() * 10);
+        otp += digit;
+    }
+    currentOTP = otp;
+    h2.innerText = otp; 
+});
+
+copyBtn.addEventListener("click", () => {
+    if (currentOTP === "") {
+        alert("Generate OTP first!");
+        return;
+    }
+    
+    navigator.clipboard.writeText(currentOTP);
+    alert("otp copied");
+});
+// Generate random digit (0–9): random decimal (0–1) → multiply by 10 → remove decimal using floor
+    </script>
+</body>
+</html>
