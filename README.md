@@ -33,7 +33,14 @@ A textarea that counts characters in real time with a 100 character limit. The c
 
 ---
 
-### 4.
+### 4. Password Strength Checker
+A password input that checks strength in real time. Shows weak, medium, or strong based on length, numbers, uppercase letters, and special characters.
+- **Concepts:** DOM manipulation, regex, event listeners, conditional logic
+- **File:** `password-strength.html`
+
+![Password Strength Checker](password-strength.png)
+
+---
 
 
 *More projects coming daily!*
