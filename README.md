@@ -24,4 +24,13 @@ Add tasks, mark them as completed with strikethrough, and delete them.
 
 ---
 
+### 3. Character Counter
+A textarea that counts characters in real time with a 100 character limit. The counter turns orange near the limit and red when maxed out.
+- **Concepts:** DOM manipulation, event listeners, input event, dynamic styling
+- **File:** `character-counter.html`
+
+![Character Counter](character-count.png)
+
+---
+
 *More projects coming daily!*
