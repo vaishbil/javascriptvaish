@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        body{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            background-color: beige;
+            color: black;
+        }
+        h2 {
+            text-decoration: underline;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /* p {
+            text-align: left;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+    <h2>Password Strength Checker</h2>
+    <input type="password" id="pass" placeholder="Enter password">
+    <p id="strength">Strength : </p>
+    </div>
+    <script>
+        let p = document.querySelector("#strength");
+let password = document.querySelector("#pass");
+
+password.addEventListener("input", () => {
+    let text = password.value;
+    let length = text.length;
+
+    let hasNums = /[0-9]/.test(text);
+    let hasUppercase = /[A-Z]/.test(text);
+    let hasSpecial = /[!@#$%^&*]/.test(text);
+
+    if (length === 0) {
+        p.innerText = "Enter Password";
+        p.style.color = "black";
+
+    } 
+    // 🔥 CHECK STRONG FIRST
+    else if (length > 10 && hasNums && hasUppercase && hasSpecial) {
+        p.innerText = "Strength: Strong password";
+        p.style.color = "green";
+
+    } 
+    // THEN MEDIUM
+    else if (length >= 6 && (hasNums || hasUppercase)) {
+        p.innerText = "Strength: Medium password";
+        p.style.color = "orange";
+
+    } 
+    // THEN WEAK
+    else {
+        p.innerText = "Strength: Weak password";
+        p.style.color = "red";
+    }
+});
+    </script>
+    <!-- <script src="/javascript/dom4.js"></script> -->
+</body>
+</html>
