@@ -38,7 +38,7 @@ A password input that checks strength in real time. Shows weak, medium, or stron
 - **Concepts:** DOM manipulation, regex, event listeners, conditional logic
 - **File:** `password-strength.html`
 
-![Password Strength Checker](password-strength.png)
+![Password Strength Checker](password-checker.png)
 
 ---
 
