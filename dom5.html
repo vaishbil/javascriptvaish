@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: white;
+    color: black;
+}
+.dark {
+    background-color: black;
+    color: white;
+}
+       #toggle {
+        border-radius: 5px;
+        background-color: yellow;
+        color: black;
+        box-shadow: inset;
+        height: 30px;
+        width: 70px;
+       }
+       
+    </style>
+</head>
+<body>
+    <h2>toggle mode</h2>
+    <button id="toggle">Switch</button>
+    <!-- <script src="/javascript/dom5.js"></script> -->
+     <script>
+        let body = document.querySelector("body");
+let button = document.querySelector("#toggle");
+let heading = document.querySelector("h2");
+
+button.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")) {
+        heading.innerText = "dark mode"
+    } else {
+        heading.innerText = "light mode"
+    }
+});
+     </script>
+</body>
+</html>
