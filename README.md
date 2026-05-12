@@ -49,5 +49,14 @@ A button that switches the page between dark and light mode, updating the headin
 
 ---
 
+### 6. Random Quote Generator
+Displays a random motivational quote from a list every time the button is clicked.
+- **Concepts:** DOM manipulation, arrays, Math.random(), Math.floor(), event listeners
+- **File:** `random-quote-generator.html`
+
+![Random Quote Generator](quote-generator.png)
+
+---
+
 
 *More projects coming daily!*
