@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quote generator</title>
+    <style>
+        div {
+            height: 300px;
+            width: 300px;
+            background-color: rgb(242, 242, 81);
+            border: 1px solid black;
+
+        }
+        #quote {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #btn {
+            position: absolute;
+            left: 110px;
+            height: 30px;
+            color: chocolate;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h2 id="quote">Click to get a quote</h2>
+    <button id="btn">New Quote</button>
+    </div>
+    <script>
+        let h2 = document.querySelector("#quote");
+let button = document.querySelector("#btn");
+
+button.addEventListener("click", () => {
+    let quotes = [
+        "The only way to do great work is to love what you do.",
+        "Dont watch the clock; do what it does. Keep going.",
+        "Success doesnt come from what you do occasionally, it comes from what you do consistently.",
+        "Your future is created by what you do today, not tomorrow.",
+        "Discipline is choosing between what you want now and what you want most."
+    ];
+    let randomQuote = Math.floor(Math.random() * quotes.length);
+    h2.innerText = quotes[randomQuote];
+});
+    </script>
+</body>
+</html>
