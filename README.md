@@ -42,5 +42,12 @@ A password input that checks strength in real time. Shows weak, medium, or stron
 
 ---
 
+### 5. Dark/Light Mode Toggle
+A button that switches the page between dark and light mode, updating the heading text accordingly.
+- **Concepts:** DOM manipulation, classList.toggle, classList.contains, event listeners
+- **File:** `toggle-button.html`
+
+---
+
 
 *More projects coming daily!*
