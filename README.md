@@ -58,5 +58,12 @@ Displays a random motivational quote from a list every time the button is clicke
 
 ---
 
+### 7. Number Guessing Game
+Guess a randomly generated number between 1 and 10. The game tells you if your guess is too high, too low, or correct.
+- **Concepts:** DOM manipulation, Math.random(), Math.floor(), Number(), event listeners
+- **File:** `number-picker.html`
+
+---
+
 
 *More projects coming daily!*
