@@ -67,5 +67,7 @@ Guess a randomly generated number between 1 and 10. The game tells you if your g
 
 ---
 
+fetch api
+
 
 *More projects coming daily!*
