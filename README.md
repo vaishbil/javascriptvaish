@@ -67,7 +67,9 @@ Guess a randomly generated number between 1 and 10. The game tells you if your g
 
 ---
 
-fetch api
+### 8. fetch api
+this is fetch api mini code
+- **File:** `lec13.html`
 
 
 *More projects coming daily!*
