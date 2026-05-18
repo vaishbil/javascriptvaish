@@ -71,5 +71,6 @@ Guess a randomly generated number between 1 and 10. The game tells you if your g
 this is fetch api mini code
 - **File:** `lec13.html`
 
+### 9. Currency Converter
 
 *More projects coming daily!*
