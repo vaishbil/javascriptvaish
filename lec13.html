@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <p id="fact"></p>
+     <button id="btn">Get Fact</button>
+     <script>
+        const URL = "https://catfact.ninja/fact";
+const factPara = document.querySelector("#facts");
+const button = document.querySelector("#btn");
+
+// using async await
+// const getFacts = async () => {
+//     console.log("getting data......");
+//     let response = await fetch(URL);
+//     console.log(response); //json format
+//     let data = await response.json();
+//     console.log(data);
+//     factPara.innerText = data.fact;
+// };
+
+// promise chaining
+function getFacts () {
+    fetch(URL)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+} 
+button.addEventListener("click", getFacts);
+     </script>
+    <!-- <script src= "/javascript/lec13.js"></script> -->
+</body>
+</html>
