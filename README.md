@@ -71,6 +71,16 @@ Guess a randomly generated number between 1 and 10. The game tells you if your g
 this is fetch api mini code
 - **File:** `lec13.html`
 
-### 9. Currency Converter
+---
+
+### 8. Currency Converter
+Converts currency amounts in real time using a live exchange rate API. Supports 150+ currencies with country flags that update dynamically based on selection.
+- **Concepts:** Fetch API, async/await, DOM manipulation, dynamic dropdowns, event listeners
+- **File:** `currency-converter-all.html`, `codes.js`
+
+![Currency Converter](currency-con.png)
+
+---
+
 
 *More projects coming daily!*
