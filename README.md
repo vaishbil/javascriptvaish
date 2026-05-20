@@ -82,5 +82,22 @@ Converts currency amounts in real time using a live exchange rate API. Supports 
 
 ---
 
+### 9. DOM Practice — Day 1 Revision
+6 practice questions covering core DOM manipulation concepts, solved independently.
+
+| Q | Topic |
+|---|-------|
+| 1 | Select element by ID and change text |
+| 2 | Change page background color on button click |
+| 3 | Live text preview using input event |
+| 4 | Show/hide div using classList.toggle |
+| 5 | Event delegation on a list |
+| 6 | Click counter with live display |
+
+- **Concepts:** querySelector, innerText, addEventListener, classList.toggle, event delegation, counters
+- **File:** `revision-day1.txt`
+
+---
+
 
 *More projects coming daily!*
