@@ -1,0 +1,176 @@
+practice questions.
+q1 code : Select the element with id title and change its text to "JavaScript is fun"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #title {
+        background-color: beige;
+        height: 100px;
+        width: 150px;
+        border: 1px solid black;
+        text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <div id="title">hello world</div>
+    <script>
+        let div = document.querySelector("#title");
+        div.addEventListener("click", () => {
+            div.innerText = "javascript is Fun";
+        })
+    </script>
+</body>
+</html>
+
+
+Q2 code : Create a button in HTML, and when clicked, change the background color of the page to any color you like.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            background-color: beige;
+            color: chocolate;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click Me!</button>
+    <script>
+        let button = document.querySelector("#btn");
+        button.addEventListener("click", () => {
+            document.body.style.backgroundColor = "orange";
+});
+    </script>
+</body>
+</html>
+
+
+Q3 code : Create an input box and a paragraph. Whatever the user types in the input should appear live in the paragraph below it. (Hint: use the input event) 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>input box</h2>
+    <input type="text" placeholder="type something..." class="in">
+    <p class="para"></p>
+
+    <script>
+        let input = document.querySelector(".in");
+        let para = document.querySelector(".para");
+        input.addEventListener("input", () => {
+            let text = input.value;
+            para.innerText = text;
+        });
+
+    </script>
+</body>
+</html>
+
+
+Q4 code : Create a button that toggles a class hidden on a div. The div should show and hide on each click. (Hint: classList.toggle)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .hdiv {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: lightblue;
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button class="toggle">Click me!</button>
+    <div class="hdiv">yoo</div>
+
+    <script>
+        let button = document.querySelector(".toggle");
+        let div = document.querySelector(".hdiv");
+        button.addEventListener("click", () => {
+            div.classList.toggle("hidden");
+        })
+    </script>
+</body>
+</html>
+
+
+Q5 code : Create 3 list items in a <ul>. When you click any item, log its text to the console. But attach only ONE event listener — not three. (Hint: event delegation)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>Mango</li>
+        <li>Apple </li>
+        <li>Litchi</li>
+    </ul>
+
+    <script>
+       let list = document.querySelector(".list"); 
+       list.addEventListener("click", () => {
+        let text = event.target.innerText; //event.target is used to check which list eleemnt is clicked inside it 
+        console.log(text);
+        
+       })
+    </script>
+</body>
+</html>
+
+Q6 code : Create a button that counts how many times it's been clicked. Display the count on the page. Every time you click, the number should update.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <button id="btn">Click me!</button>
+    <p id="para"></p>
+
+    <script>
+        let button = document.querySelector("#btn");
+        let paragraph = document.querySelector("#para");
+        let store = 0;
+        button.addEventListener("click", (event) => {
+            store++;
+            paragraph.innerText = store;
+        })
+    </script>
+</body>
+</html>
