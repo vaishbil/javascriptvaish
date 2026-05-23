@@ -82,8 +82,8 @@ Converts currency amounts in real time using a live exchange rate API. Supports 
 
 ---
 
-### 9. DOM Practice — Day 1 Revision
-6 practice questions covering core DOM manipulation concepts, solved independently.
+### 9. DOM Practice — Revision
+10 practice questions covering core DOM manipulation concepts, solved independently.
 
 | Q | Topic |
 |---|-------|
@@ -93,9 +93,13 @@ Converts currency amounts in real time using a live exchange rate API. Supports 
 | 4 | Show/hide div using classList.toggle |
 | 5 | Event delegation on a list |
 | 6 | Click counter with live display |
+| 7 | Remove list items dynamically |
+| 8 | Add items to a list from input |
+| 9 | Hover opacity effect using JS events + event delegation |
+| 10 | Input border validation using classList |
 
-- **Concepts:** querySelector, innerText, addEventListener, classList.toggle, event delegation, counters
-- **File:** `revision-day1.txt`
+- **Concepts:** querySelector, innerText, addEventListener, classList, event delegation, createElement, mouseover/mouseout, input validation
+- **File:** `dom-revision.txt`
 
 ---
 
