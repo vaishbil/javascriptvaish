@@ -174,3 +174,213 @@ Q6 code : Create a button that counts how many times it's been clicked. Display 
     </script>
 </body>
 </html>
+
+Q7 code :  Create a list of 5 movie names hardcoded in HTML. Add a button next to each that says "Remove". When clicked, that specific movie should be removed from the list.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <ul class="mainlist">
+        <li>Wake up sid<button class="remove-btn">Remove</button></li>
+        <li>Tamasha<button class="remove-btn">Remove</button></li>
+        <li>Rockstar <button class="remove-btn">Remove</button></li>
+        <li>ok Jaanu <button class="remove-btn">Remove</button></li>
+    </ul>
+       
+    <script>
+        let ul = document.querySelector(".mainlist") 
+        let button = document.querySelectorAll(".remove-btn");
+        ul.addEventListener("click", (event) => {
+            if(event.target.classList.contains("remove-btn")) {
+                let li = event.target.parentElement; //Take the clicked button and give me the element directly above it.
+                li.remove();
+            }
+
+        })
+    </script>
+</body>
+</html>
+
+
+Q8 code : Create an input and a button that says "Add". Whatever is typed in the input should get added as a new item to a <ul> below. After adding, the input should clear itself.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Type Something...." class="input">
+    <button class="add">ADD</button>
+    <div id="forList"></div>
+       
+    <script>
+        let input = document.querySelector(".input");
+        let button = document.querySelector(".add");
+        let div = document.querySelector("#forList");
+        button.addEventListener("click", () => {
+            // storing the input in text
+            let text = input.value;
+            // if input is empty is cant be added in list 
+            if(text === "") return;
+            // creating new element
+            let li = document.createElement("li");
+            li.innerText = text;
+            // add task to list
+            div.appendChild(li);
+            // clear input
+            input.value = "";
+
+        })
+    </script>
+</body>
+</html>
+
+Q9 code : Create 3 boxes with different background colors. When you hover over any box, its opacity should drop to 0.5. When you move the mouse away, it should go back to 1. Do this with JavaScript events, not CSS hover.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-div {
+            display: flex;
+            gap: 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+        }
+
+        .box1 {
+            background-color: green;
+        }
+
+        .box2 {
+            background-color: yellow;
+        }
+
+        .box3 {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-div">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+       
+    <script>
+        // by using event delegation 
+        let div = document.querySelector(".outer-div");
+        let boxes = document.querySelectorAll(".box");
+        div.addEventListener("mouseover", (event) => {
+           if(event.target.classList.contains("box")) {
+            event.target.style.opacity = "0.5";
+           } 
+        });
+        div.addEventListener("mouseout", (event) => {
+           if(event.target.classList.contains("box")) {
+            event.target.style.opacity = "1";
+           } 
+        });
+
+    //    by adding event listener on every box 
+        // let outerdiv = document.querySelectorAll(".outer-div");
+        // let box1 = document.querySelector(".box1");
+        // let box2 = document.querySelector(".box2");
+        // let box3 = document.querySelector(".box3");
+        // // for box 1
+        // box1.style.backgroundColor = "green";
+        // box1.style.height = "100px";
+        // box1.style.width = "100px";
+        // box1.style.opacity = "1";
+        // // for box 2
+        // box2.style.backgroundColor = "yellow";
+        // box2.style.height = "100px";
+        // box2.style.width = "100px";
+        // box2.style.opacity = "1";
+        // // for box 3
+        // box3.style.backgroundColor = "lightblue";
+        // box3.style.height = "100px";
+        // box3.style.width = "100px";
+        // box3.style.opacity = "1";
+
+        // box1.addEventListener("mouseover", (event) => {
+        //     event.target.style.opacity = 0.5;     
+        // })
+        // box1.addEventListener("mouseout", (event) => {
+        //     event.target.style.opacity = 1;     
+        // });
+        // box2.addEventListener("mouseover", (event) => {
+        //     event.target.style.opacity = 0.5;     
+        // })
+        // box2.addEventListener("mouseout", (event) => {
+        //     event.target.style.opacity = 1;     
+        // });
+        // box3.addEventListener("mouseover", (event) => {
+        //     event.target.style.opacity = 0.5;     
+        // })
+        // box3.addEventListener("mouseout", (event) => {
+        //     event.target.style.opacity = 1;     
+        // });
+
+    </script>
+</body>
+</html>
+
+
+Q10 code : Create an input box. When the user types, if the input is empty show a red border. If it has text show a green border. Use classList to add/remove border classes, not inline styles.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Border Validation</title>
+    <style>
+        .input {
+            padding: 10px;
+            border: 2px solid black;
+            outline: none;
+        }
+        .green-border {
+            border-color: green;
+        }
+        .red-border {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Type something..." class="input">
+    <script>
+        let input = document.querySelector(".input");
+        input.addEventListener("input", () => {
+            let text = input.value;
+            if(text.trim() === "") {
+                input.classList.remove("green-border");
+                input.classList.add("red-border");
+            } else {
+                input.classList.remove("red-border");
+                input.classList.add("green-border");
+            }
+        });
+    </script>
+</body>
+</html>
