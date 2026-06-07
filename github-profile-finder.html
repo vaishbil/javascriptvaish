@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profile Finder</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: #f0f4f8;
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        color: #1a1a2e;
+        margin-bottom: 24px;
+      }
+
+      .search-bar {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      input {
+        flex: 1;
+        padding: 10px 16px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      input:focus {
+        border-color: #4a90d9;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4a90d9;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background-color: #357abd;
+      }
+
+      #result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+      }
+
+      #result img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 3px solid #4a90d9;
+        margin-bottom: 8px;
+      }
+
+      #result h2 {
+        font-size: 1.4rem;
+        color: #1a1a2e;
+      }
+
+      #result p {
+        color: #666;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>GitHub Profile Finder</h1>
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Enter GitHub username"
+          id="username-input"
+        />
+        <button id="search-btn">Search!</button>
+      </div>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      let input = document.querySelector("#username-input");
+      let btn = document.querySelector("#search-btn");
+      let div = document.querySelector("#result");
+      btn.addEventListener("click", () => {
+        let username = input.value;
+        // console.log(username);
+        async function getProfile(username) {
+            try {
+                const response = await fetch(
+            `https://api.github.com/users/${username}`);
+            if(!response.ok) {
+                div.innerHTML = `<p style = "color: red;">User not found. Try again.</p>`;
+                return;
+            }
+          
+          const data = await response.json();
+        //   console.log(data);
+
+          div.innerHTML = `
+                <img src="${data.avatar_url}" width="100px">
+                <h2>${data.name}</h2>
+                <p>${data.bio}</p>
+                <p>Followers: ${data.followers}</p>
+                <p>Public Repos: ${data.public_repos}</p>
+                `;
+                
+            } catch(error) {
+                div.innerHTML = `<p style="color: red;">Something went wrong. Check your connection.</p>`;
+            }
+          
+        }
+        getProfile(username);
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
