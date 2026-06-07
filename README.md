@@ -103,5 +103,14 @@ Converts currency amounts in real time using a live exchange rate API. Supports 
 
 ---
 
+### 10. GitHub Profile Finder
+Search any GitHub username and instantly view their profile picture, name, bio, followers, and public repo count using the GitHub API.
+- **Concepts:** Fetch API, async/await, try/catch, DOM manipulation, dynamic innerHTML
+- **File:** `github-profile-finder.html`
+
+![GitHub Profile Finder](github-finder.png)
+
+---
+
 
 *More projects coming daily!*
